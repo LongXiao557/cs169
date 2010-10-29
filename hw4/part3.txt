@@ -1,0 +1,5 @@
+3.1. 1.When caching is disabled, every time a user's browser wants to get a page,the apache server sends the request to mongrel and the result goes to the user all the way through apache server. However, if caching is enabled, apache server can just fetch the page from the cache without going through mongrel, which is really slow.
+     2.The problem is that the cached page that Apache fetches might not be updated.
+3.2. 1.Right after the event is edited, if a user visits the site, he will not see the change that was made.
+     2.As in the video instructed, We created a post_sweeper class. When an action is done, we expire the cache for that page so that the user's browser will not go through the shortcut and get the outdated page, but rather go through the long path and get the updated page.
+3.3. 1.In the event model, you can add/change events and it makes sense to cache it because when people visit that event page it will be faster. However it doesn't make sense to cache the user model because there's nothing to cache because users use session variables, which is there wherever you go.

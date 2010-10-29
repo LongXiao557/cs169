@@ -1,0 +1,2 @@
+When the number of processes is small (<=16), the server is not fully occupied,
+so the request rate increases at about the same rate as the number of instances increases. When the number of processes reaches a certain threshold, the server cannot handle more requests, so the request rate stayed somewhere close to 35req/s even when we have 32 processes.
